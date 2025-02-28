@@ -1,24 +1,19 @@
 package org.example
 
 fun main() {
-    var contador = 10
-    //mientras contador sea mayor a 0
-    while (contador > 0) {
-        println("Contador while: $contador")
-        contador--
-    }
-    //hacer mientras contador sea mayor a 0
-    contador = 10
-    do {
-        println("Contador doWhile: $contador")
-        contador--
-    } while (contador > 0)
+    val listaDeFrutas = listOf("Maçã", "Banana", "Pera", "Uva", "Melancia")
 
-    //ejerccio 1
-    do{
-        println("Generando numero aleatorio")
-        val numeroAleatorio = (0..100).random()
-        println(" El numero generado es: $numeroAleatorio")
-    } while (numeroAleatorio > 50)
+    //for clasico
+    for (fruta in listaDeFrutas) {println("Hoy voy a comer la fruta llamada $fruta")    }
+    
+    //funciones anonimas o lambdas
+    listaDeFrutas.forEach { fruta -> println("Hoy voy a comer la fruta llamada $fruta") }
+    
+    //funciones anonimas o lambdas 
+    val caracteresDeFrutas: List<Int> = listaDeFrutas.map { fruta -> fruta.length }
+    println(caracteresDeFrutas)
 
+    //funciones anonimas o lambdas
+    val frutasConA: List<String> = listaDeFrutas.filter { fruta -> fruta.contains("e") }
+    println(frutasConA)
 }
