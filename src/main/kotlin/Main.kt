@@ -1,25 +1,35 @@
 package org.example
 
 fun main() {
-    val numerosDeLoteria = listOf(11, 22, 43, 56, 78, 90)
-    val numerosSorteo = numerosDeLoteria.sorted() // Ordena de menor a mayor
-    println(numerosSorteo)
+    val edadDeSuperHeroes = mapOf(
+        "Superman" to 35,
+        "Batman" to 43,
+        "Capitan America" to 99,
+        "Spiderman" to 21
+    )
+    println(edadDeSuperHeroes)
 
-    val numerosSorteoDescendente = numerosDeLoteria.sortedDescending() // Ordena de mayor a menor
-    println(numerosSorteoDescendente)
+    val edadDeSuperHeroesMutable = mutableMapOf(
+        "Superman" to 35,
+        "Batman" to 43,
+        "Capitan America" to 99,
+        "Spiderman" to 21
+    )
 
-    val ordenarPorMultiplos = numerosDeLoteria.sortedBy { numero -> numero < 50 } // Ordena por múltiplos de 50
-    println(ordenarPorMultiplos)
+    edadDeSuperHeroesMutable["Superman"] = 36
+    edadDeSuperHeroesMutable.put("IronMan", 48)
+    edadDeSuperHeroesMutable.remove("Batman")
 
-    val numerosAleatorios = numerosDeLoteria.shuffled() // Mezcla los números
-    println(numerosAleatorios)
+    println(edadDeSuperHeroesMutable)
 
-    val numerosEnReversa = numerosDeLoteria.reversed() // Invierte el orden de la lista
-    println(numerosEnReversa)
+    edadDeSuperHeroesMutable["Storm"] = 30
+    println(edadDeSuperHeroesMutable)
 
-    val mensajeDeNumeros = numerosDeLoteria.map{ numero -> "Tu número de lotería es: $numero" } // Mapea los números
-    println(mensajeDeNumeros)
+    val edadIroman = edadDeSuperHeroesMutable["IronMan"]
+    println(edadIroman)
 
-    val numerosFiltrados = numerosDeLoteria.filter { numero -> numero > 50 } // Filtra los números
-    println(numerosFiltrados)
+    println(edadDeSuperHeroesMutable.keys)
+    println(edadDeSuperHeroesMutable.values)
+
+
 }
