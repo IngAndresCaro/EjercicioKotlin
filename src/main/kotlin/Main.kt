@@ -1,34 +1,25 @@
 package org.example
 
 fun main() {
-    //Lista no mutable
-    val listDeNombres = listOf<String>("Juan", "Pedro", "Luis", "Carlos", "Juan", "Pedro", "Luis", "Carlos")
-    println(listDeNombres)
-    //lista mutable
-    val listaVasia = mutableListOf<String>()
-    println(listaVasia)
-    listaVasia.add("Mateo")
-    println(listaVasia)
+    val numerosDeLoteria = listOf(11, 22, 43, 56, 78, 90)
+    val numerosSorteo = numerosDeLoteria.sorted() // Ordena de menor a mayor
+    println(numerosSorteo)
 
-    val valorUsandoGet = listaVasia.get(0)
-    println(valorUsandoGet)
+    val numerosSorteoDescendente = numerosDeLoteria.sortedDescending() // Ordena de mayor a menor
+    println(numerosSorteoDescendente)
 
-    val valorUsadoOperador = listaVasia[0]
-    println(valorUsadoOperador)
+    val ordenarPorMultiplos = numerosDeLoteria.sortedBy { numero -> numero < 50 } // Ordena por múltiplos de 50
+    println(ordenarPorMultiplos)
 
-    val primerValor = listDeNombres.firstOrNull()
-    println(primerValor)
+    val numerosAleatorios = numerosDeLoteria.shuffled() // Mezcla los números
+    println(numerosAleatorios)
 
-    listaVasia.removeAt(0)
-    println(listaVasia)
+    val numerosEnReversa = numerosDeLoteria.reversed() // Invierte el orden de la lista
+    println(numerosEnReversa)
 
-    listaVasia.add("Atena")
-    listaVasia.add( "Hades")
-    listaVasia.add( "Zeu")
-    listaVasia.removeIf { caracteres -> caracteres.length > 4 }
-    println(listaVasia)
+    val mensajeDeNumeros = numerosDeLoteria.map{ numero -> "Tu número de lotería es: $numero" } // Mapea los números
+    println(mensajeDeNumeros)
 
-    val myArray = arrayOf(1, 2, 3, 4, 5)
-    println("Nuestro array $myArray")
-    println("Nuestro array como lista ${myArray.toList()}")
+    val numerosFiltrados = numerosDeLoteria.filter { numero -> numero > 50 } // Filtra los números
+    println(numerosFiltrados)
 }
